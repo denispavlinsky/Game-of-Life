@@ -1,49 +1,39 @@
 # Game of Life
-
-Jednoduchá simulace buněčného automatu **Conway's Game of Life** vytvořená v Pythonu jako součást semestrálního projektu z programování.
-
 ---
+Jednoduchá simulácia dvojrozmerného bunkového automatu **Conway's Game of Life** (John H. Conway, 1970), ktorý v štvorčekovej mriežke prostedníctvom daných pravidiel simuluje vývoj spoločenstva buniek.
 
-## 📝 Dokumentace (v češtině)
+## Dokumentácia
+---
+### Pravidlá simulácie
+**1.** Každá živá bunka s menej ako dvoma živými susedmi zomrie (underpopulation).
 
-### 🟢 Spuštění
-Před spuštěním je třeba mít nainstalovaný **Python**.  
-V adresáři projektu spusťte:
+**2.** Každá živá bunka s dvoma alebo troma živými susedmi zostáva v ďalšom kroku živá (survival/prežitie).
 
-```bash
-pip install -r requirements.txt
-Program spustíte příkazem:
+**3.** Každá živá bunka s viac ako troma živými susedmi zomrie (overpopulation).
 
-bash
-Kopírovať
-Upraviť
-python main.py
-🖥️ Rozhraní
-🧭 Ovládání
-Akce	Popis
-Levé tlačítko myši	Aktivuje nebo deaktivuje buňku v mřížce.
-Kolečko myši (zoom)	Přibližuje nebo oddaluje mřížku pod kurzorem.
-Mezerník	Spustí nebo pozastaví simulaci.
-R	Náhodně vygeneruje buňky.
-D nebo Backspace	Vymaže všechny buňky.
-Šipky nahoru/dolů	Zrychlují nebo zpomalují simulaci.
-Esc	Zavře aplikaci.
+**4.** Každá mŕtva bunka s práve troma susedmi v ďalšom kroku ožije (reproduction/rozmnoženie).
 
-📐 Mřížka
-Mřížka se skládá z čtvercových buněk, které mohou být:
+### Spustenie
+Pred spustením  simulácie je potrebné mať nainštalovaný **Python**. V adresári projektu treba spustiť: ``` pip install -r requirements.txt``` 
 
-živé (aktivní)
+Program spustíte príkazom: ``` python game_of_life/main.py```
 
-mrtvé (neaktivní)
+### Rozhranie
 
-Během spuštěné simulace se buňky mění podle pravidel Game of Life.
-Pomocí zoomování a posunu se lze pohybovat po větší mřížce.
+#### Mriežka
+Mriežka, na ktorej prebieha simulácia Game of Life sa skladá zo štvorcových buniek, ktoré môžu nadobúdať dva stavy:
+- živé/aktívne
+- mŕtve/neaktívne
 
-⚙️ Pravidla simulace
-Simulace běží podle klasických pravidel Game of Life:
+Počas spustenej simulácie sa stav buniek mení podľa pravidiel uvedených vyššie. Pomocou kolieska myši sa dá prizoomovať na ľubovoľnú časť mriežky a takisto odzoomovať.
 
-Živá buňka přežije, pokud má 2 nebo 3 živé sousedy.
-
-Mrtvá buňka ožije, pokud má přesně 3 živé sousedy.
-
-Ve všech ostatních případech buňka zanikne nebo zůstane mrtvá.
+#### Ovládanie
+| Akcia              | Popis                                        |
+| ------------------ | ------------------------------               |
+| ľavé tlačidlo myši | oživí/zahubí bunku v mriežke                 |
+| koliesko myši      | prizoomovanie/odzoomovanie                   |
+| medzera            | zapauzovanie simulácie                       |
+| D alebo Backspace  | vymazanie všetkých aktuálne živých buniek    |
+| R                  | náhodne v mriežke vygeneruje žijúce bunky    |
+| šípky hore/dole    | zrýchľujú/spomaľujú simuláciu                |
+| Esc                | zavrie okno so simuláciou                    |
